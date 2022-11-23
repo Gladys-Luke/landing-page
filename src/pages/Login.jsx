@@ -24,6 +24,10 @@ function Login() {
       id: 4,
       quote: "e don do like that"
     },
+    {
+      id: 5,
+      quote: "God abeg"
+    },
   ])
 
 
