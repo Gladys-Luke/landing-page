@@ -2,7 +2,7 @@ import React from "react";
 import mainLayout from "../layout/mainLayout";
 import { Link } from "react-router-dom";
 
-function signUp() {
+function SignUp() {
   return (
     <mainLayout>
       <div className=" w-full flex justify-center   text-center h-screen items-center">
@@ -56,4 +56,4 @@ function signUp() {
   );
 }
 
-export default signUp;
+export default SignUp;

@@ -1,13 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mainLayout from "../layout/mainLayout";
 import { Link } from "react-router-dom";
 
-function login() {
+
+
+function Login() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [randomQuote, setRandomQuote] = useState({})
+  const [Quotes, setQuote] = useState([
+    {
+      id: 1,
+      quote: "Thank God is Friday"
+    },
+    {
+      id: 2,
+      quote: "Aspire to Perspire"
+    },
+    {
+      id: 3,
+      quote: "Tomorrow is too late"
+    },
+    {
+      id: 4,
+      quote: "e don do like that"
+    },
+  ])
+
+
+  useEffect(() => {
+   setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * Quotes.length)
+      const item = Quotes[randomIndex]
+      setRandomQuote(item)
+      console.log(item)
+      console.log(Quotes.length)
+    }, 2000);
+  }, [Quotes]);
+  
       return (
     <mainLayout>
      <div className=" w-full flex justify-center   text-center h-screen items-center">
      <div className=" flex flex-col  " >
         <div className=" p-16 shadow-xl rounded-lg">
+        <p>{randomQuote.quote}</p>
         <div className="text-2xl">Login</div>
         <div className="flex flex-col">
           <div className="mt-8 flex flex-col items-center">
@@ -51,4 +86,4 @@ function login() {
    
 }
 
-export default login;
+export default Login;
